@@ -281,8 +281,8 @@ export default function ScaleReadyPage() {
           <ul className="mt-10 grid gap-x-10 gap-y-5 sm:grid-cols-2">
             {srLearnItems.map((item) => (
               <li key={item} className="flex gap-3 border-t border-white/10 pt-4">
-                <span className="mt-0.5 shrink-0 font-bold text-teal">✓</span>
-                <p className="leading-relaxed text-fg">{item}</p>
+                <span className="mt-0.5 shrink-0 text-lg font-bold text-teal md:text-xl">✓</span>
+                <p className="text-lg leading-relaxed text-fg md:text-xl">{item}</p>
               </li>
             ))}
           </ul>
