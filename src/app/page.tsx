@@ -73,7 +73,7 @@ export default function HomePage() {
         },
         {
           title: "WIN Year-End Reunion",
-          subtitle: "สัมมนา 1 วัน เฉพาะนักเรียนเก่า · 12 ธ.ค. 2569",
+          subtitle: "อัปเดตภาษี เตรียมบัญชีเพื่อปิดงบ วางแผนเงินปีหน้า",
           image: "/images/year-end-reunion.webp",
           imageTop: true,
           href: "/year-end-reunion",
@@ -316,7 +316,20 @@ export default function HomePage() {
 
       {/* คลาสล่าสุดที่กำลังจะมาถึง */}
       <Reveal>
-        <UpcomingClass image="/images/KVIBF2.webp" lineUrl={LINE_URL} />
+        <UpcomingClass
+          subtitle="WIN Year-End Reunion · ปิดปีให้พร้อม เริ่มปีใหม่ให้เห็นทางโต"
+          image="/images/year-end-reunion.webp"
+          imageAlt="WIN YEAR-END REUNION — สัมมนา 1 วัน เฉพาะนักเรียนเก่า วันเสาร์ที่ 12 ธันวาคม 2569"
+          imageTop
+          dateLabel="วันเสาร์ที่ 12 ธันวาคม 2569"
+          dayLabel="12"
+          monthLabel="ธ.ค."
+          dateCaption="วันงาน"
+          seatNote="สิทธิ์เข้าร่วมเฉพาะนักเรียนเก่า"
+          ctaText="สมัครเข้าร่วม · ติดต่อ Line"
+          bannerHref="/year-end-reunion"
+          lineUrl={LINE_URL}
+        />
       </Reveal>
 
       {/* Section การ์ดราคา — เลือกบริการ + สมัคร (มี stagger ในตัว) */}
