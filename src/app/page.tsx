@@ -37,11 +37,13 @@ export default function HomePage() {
           title: "Business Health Check",
           subtitle: "เช็กสุขภาพการเงินธุรกิจ รู้จุดอ่อนก่อนแบงก์เจอ",
           image: "/images/business-health-check.webp",
+          href: "/business-health-check",
         },
         {
           title: "Owner Finance Check",
           subtitle: "อ่านงบก่อนเซ็น — รู้ตัวเลขที่ควรดู",
           image: "/images/owner-finance-check.webp",
+          href: "/owner-finance-check",
         },
         {
           title: "Scale Ready Manufacturing",
@@ -237,6 +239,22 @@ export default function HomePage() {
     },
     {
       group: "เรียนสด (Onsite)",
+      eyebrow: "สัมมนา 1 วัน",
+      title: "WIN Year-End Reunion",
+      description: "ปิดปีให้พร้อม เริ่มปีใหม่ให้เห็นทางโต",
+      image: "/images/year-end-reunion.webp",
+      imageTop: true,
+      features: [
+        "เช็กลิสต์บัญชีและภาษีสำหรับคุยกับสำนักงานบัญชี",
+        "สรุปจุดตรวจเรื่องกำไร เงินสด และภาระธุรกิจ",
+        "ตัวอย่างใช้ AI ช่วยงานจริง",
+        "แผน 90 วัน สำหรับเป้าหมายที่เลือก",
+      ],
+      price: "฿3,500",
+      detailUrl: "/year-end-reunion",
+    },
+    {
+      group: "เรียนตัวต่อตัว",
       eyebrow: "ตัวต่อตัว",
       title: "Private Consult",
       description: "การปรึกษาส่วนตัวเพื่อธุรกิจคุณโดยเฉพาะ",
