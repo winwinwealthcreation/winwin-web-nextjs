@@ -69,6 +69,13 @@ export default function HomePage() {
           image: "/images/KVIBF2.webp",
           href: "/inside-business-finance",
         },
+        {
+          title: "WIN Year-End Reunion",
+          subtitle: "สัมมนา 1 วัน เฉพาะนักเรียนเก่า · 12 ธ.ค. 2569",
+          image: "/images/year-end-reunion.webp",
+          imageTop: true,
+          href: "/year-end-reunion",
+        },
       ],
     },
     {
