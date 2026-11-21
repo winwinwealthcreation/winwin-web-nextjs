@@ -16,7 +16,7 @@ import type {
 export const ownerFinanceCheckData: SalePageData = {
   meta: {
     title:
-      "Owner Finance Check Online — อ่านงบก่อนเซ็น เจ้าของอ่านงบตัวเองเป็น รู้ตัวเลขที่ควรดู | WinWin Wealth Creation",
+      "Owner Finance Check Online — อ่านงบก่อนเซ็น เจ้าของอ่านงบตัวเองเป็น รู้ตัวเลขที่ควรดู",
     description:
       "คลาสออนไลน์ (Zoom) สอนเจ้าของธุรกิจอ่านงบการเงินของตัวเองเป็น — รู้ว่าตัวเลขไหนต้องดู แยกกำไรจริงจากเงินสดจริง เห็นตัวเลขเตือนภัยก่อนสาย และตรวจเป็นก่อนเซ็นอนุมัติ สอนโดยอดีต RM ธนาคารกสิกร 7 ปี",
     slug: "owner-finance-check",

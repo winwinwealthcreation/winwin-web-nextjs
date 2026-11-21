@@ -16,7 +16,7 @@ import type {
 export const businessHealthCheckData: SalePageData = {
   meta: {
     title:
-      "Business Health Check Online — อ่านงบเป็น เห็นกำไรจริง คุมกระแสเงินสดได้ | WinWin Wealth Creation",
+      "Business Health Check Online — อ่านงบเป็น เห็นกำไรจริง คุมกระแสเงินสดได้",
     description:
       'คลาสออนไลน์ 3 EP สำหรับเจ้าของธุรกิจที่ "ขายดีแต่เงินไม่เหลือ" — อ่านงบในมุมเจ้าของ + CEO Dashboard มอนิเตอร์กำไรรายเดือน + Smart Cash Flow รู้ล่วงหน้าว่าเงินจะพอไหม สอนโดยอดีต RM ธนาคาร 7 ปี',
     slug: "business-health-check",

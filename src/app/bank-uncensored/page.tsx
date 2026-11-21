@@ -5,7 +5,7 @@ import ContactCTA from "@/components/sections/ContactCTA";
 import HeroSlider from "@/components/ui/HeroSlider";
 
 export const metadata: Metadata = {
-  title: "Bank Uncensored Online — ความลับที่แบงก์ไม่เคยบอก | WinWin Wealth",
+  title: "Bank Uncensored Online — ความลับที่แบงก์ไม่เคยบอก",
   description:
     "คลาสออนไลน์ 3 ชั่วโมง สอนโดยอดีต RM ธนาคาร 7 ปี เรียนจบ เช็คตัวเองได้ทันทีว่าพร้อมกู้แค่ไหน",
 };

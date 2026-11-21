@@ -11,7 +11,7 @@ import type { SalePageData, WhoIsThisForData, FAQItem } from "./types";
 export const scaleReadyData: Omit<SalePageData, "instructor"> = {
   meta: {
     title:
-      "Scale Ready Manufacturing — เห็นภาพการเงินให้ชัด เตรียมธุรกิจให้พร้อมโต | WinWin Wealth Creation",
+      "Scale Ready Manufacturing — เห็นภาพการเงินให้ชัด เตรียมธุรกิจให้พร้อมโต",
     description:
       "คลาสสำหรับเจ้าของธุรกิจผลิตที่ต้องการเห็นภาพการเงินของธุรกิจตัวเองให้ชัดขึ้น ก่อนเพิ่มยอดขาย เพิ่มกำลังผลิต หรือขยายกิจการ — เห็นภาพ เห็นจุด เห็นทาง ผ่านเครื่องมือ MAP → GAP → MOVE เรียนสด Zoom 3 ชม. วันที่ 4 ต.ค. 2569 ดูย้อนหลัง 1 ปี",
     slug: "scale-ready",

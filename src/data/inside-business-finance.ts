@@ -2,7 +2,7 @@ import type { SalePageData } from "./types";
 
 export const insideBusinessFinanceData: SalePageData = {
   meta: {
-    title: "Inside Business Finance — ระบบออกแบบโครงสร้างเงินทุนเพื่อการเติบโต | WinWin Wealth Creation",
+    title: "Inside Business Finance — ระบบออกแบบโครงสร้างเงินทุนเพื่อการเติบโต",
     description:
       "คลาสสัมมนาสด 7 Sessions สำหรับเจ้าของธุรกิจ 30–100 ล้าน — ระบบ 100M Method ที่ทำให้คุณตัดสินใจเรื่องเงินก้อนใหญ่ของธุรกิจได้ด้วยตัวเอง สอนโดยวิน อดีต RM 7 ปี",
     slug: "inside-business-finance",
