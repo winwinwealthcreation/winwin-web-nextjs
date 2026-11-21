@@ -12,6 +12,11 @@ interface Props {
   lineUrl?: string;
   seatNote?: string;
   ctaText?: string;
+  dayLabel?: string;
+  monthLabel?: string;
+  dateCaption?: string;
+  imageTop?: boolean;
+  bannerHref?: string;
 }
 
 // แบนเนอร์คลาสล่าสุดที่กำลังจะมาถึง — premium, static (CSS-only animation)
@@ -26,7 +31,15 @@ export default function UpcomingClass({
   lineUrl = "https://lin.ee/gGDzjTi",
   seatNote = "รับจำนวนจำกัด",
   ctaText = "สำรองที่นั่ง · ติดต่อ Line",
+  dayLabel = "15",
+  monthLabel = "ส.ค.",
+  dateCaption = "เปิดเรียน",
+  imageTop = false,
+  bannerHref,
 }: Props) {
+  const bannerUrl = bannerHref ?? lineUrl;
+  const isExternal = /^https?:\/\//.test(bannerUrl);
+
   return (
     <section className="relative w-full overflow-hidden border-t border-accent/10 bg-bg-subtle py-section">
       {/* ambient glow */}
@@ -51,9 +64,8 @@ export default function UpcomingClass({
 
         {/* banner frame */}
         <a
-          href={lineUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={bannerUrl}
+          {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           className="mkt-focus group relative mx-auto block max-w-6xl"
         >
           {/* gradient glow border */}
@@ -67,8 +79,8 @@ export default function UpcomingClass({
           />
 
           <div className="relative overflow-hidden rounded-card border border-white/10 bg-bg">
-            {/* NEW badge — pulse */}
-            <span className="absolute left-4 top-4 z-10 inline-flex items-center gap-2 rounded-pill border border-accent/30 bg-bg/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent backdrop-blur-sm">
+            {/* NEW badge — pulse · ซ่อนบน mobile (จอแคบจะทับหัวข้อบน KV) เหมือน date chip */}
+            <span className="absolute left-4 top-4 z-10 hidden sm:inline-flex items-center gap-2 rounded-pill border border-accent/30 bg-bg/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent backdrop-blur-sm">
               <span className="relative flex h-2 w-2" aria-hidden="true">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
@@ -87,7 +99,7 @@ export default function UpcomingClass({
               alt={imageAlt}
               loading="lazy"
               decoding="async"
-              className="aspect-[16/9] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              className={`aspect-[16/9] w-full object-cover${imageTop ? " object-top" : ""} transition-transform duration-700 ease-out group-hover:scale-[1.03]`}
             />
             {/* hover sheen */}
             <span
@@ -101,14 +113,14 @@ export default function UpcomingClass({
         <div className="mx-auto mt-8 flex max-w-6xl flex-col items-center justify-between gap-6 rounded-card border border-white/10 bg-surface/60 p-5 backdrop-blur-sm sm:flex-row sm:p-6">
           <div className="flex items-center gap-4">
             <span className="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-xl border border-accent/20 bg-bg text-accent">
-              <span className="text-xl font-bold leading-none tabular-nums">15</span>
+              <span className="text-xl font-bold leading-none tabular-nums">{dayLabel}</span>
               <span className="mt-0.5 text-[10px] font-medium uppercase tracking-wide text-fg-muted">
-                ส.ค.
+                {monthLabel}
               </span>
             </span>
             <div className="flex flex-col">
               <span className="text-xs font-semibold uppercase tracking-wider text-fg-muted">
-                เปิดเรียน
+                {dateCaption}
               </span>
               <span className="text-lg font-semibold text-fg">{dateLabel}</span>
             </div>

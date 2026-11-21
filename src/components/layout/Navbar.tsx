@@ -22,6 +22,7 @@ const courseGroups = [
     courses: [
       { label: "Inside Bank", href: "/inside-bank" },
       { label: "Inside Business Finance", href: "/inside-business-finance" },
+      { label: "Year-End Reunion", href: "/year-end-reunion" },
     ],
   },
   {
