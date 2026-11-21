@@ -37,6 +37,9 @@ export default function UpcomingClass({
   imageTop = false,
   bannerHref,
 }: Props) {
+  const bannerUrl = bannerHref ?? lineUrl;
+  const isExternal = /^https?:\/\//.test(bannerUrl);
+
   return (
     <section className="relative w-full overflow-hidden border-t border-accent/10 bg-bg-subtle py-section">
       {/* ambient glow */}
@@ -61,9 +64,8 @@ export default function UpcomingClass({
 
         {/* banner frame */}
         <a
-          href={bannerHref ?? lineUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={bannerUrl}
+          {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           className="mkt-focus group relative mx-auto block max-w-6xl"
         >
           {/* gradient glow border */}
@@ -77,8 +79,8 @@ export default function UpcomingClass({
           />
 
           <div className="relative overflow-hidden rounded-card border border-white/10 bg-bg">
-            {/* NEW badge — pulse */}
-            <span className="absolute left-4 top-4 z-10 inline-flex items-center gap-2 rounded-pill border border-accent/30 bg-bg/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent backdrop-blur-sm">
+            {/* NEW badge — pulse · ซ่อนบน mobile (จอแคบจะทับหัวข้อบน KV) เหมือน date chip */}
+            <span className="absolute left-4 top-4 z-10 hidden sm:inline-flex items-center gap-2 rounded-pill border border-accent/30 bg-bg/80 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent backdrop-blur-sm">
               <span className="relative flex h-2 w-2" aria-hidden="true">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
