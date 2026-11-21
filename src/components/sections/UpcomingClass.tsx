@@ -17,6 +17,8 @@ interface Props {
   dateCaption?: string;
   imageTop?: boolean;
   bannerHref?: string;
+  /** true = โชว์รูปเต็ม ไม่ crop (object-contain) ในกรอบ 16:9 เดิม + เติมขอบข้างด้วยรูปเดียวกันแบบเบลอ — ใช้กับ KV สี่เหลี่ยมจัตุรัส */
+  imageContain?: boolean;
 }
 
 // แบนเนอร์คลาสล่าสุดที่กำลังจะมาถึง — premium, static (CSS-only animation)
@@ -36,6 +38,7 @@ export default function UpcomingClass({
   dateCaption = "เปิดเรียน",
   imageTop = false,
   bannerHref,
+  imageContain = false,
 }: Props) {
   const bannerUrl = bannerHref ?? lineUrl;
   const isExternal = /^https?:\/\//.test(bannerUrl);
@@ -93,14 +96,38 @@ export default function UpcomingClass({
               {dateLabel}
             </span>
 
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={image}
-              alt={imageAlt}
-              loading="lazy"
-              decoding="async"
-              className={`aspect-[16/9] w-full object-cover${imageTop ? " object-top" : ""} transition-transform duration-700 ease-out group-hover:scale-[1.03]`}
-            />
+            {imageContain ? (
+              <>
+                {/* backdrop: รูปเดียวกันแบบเบลอ เติมช่องว่างด้านข้าง */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={image}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full scale-110 object-cover blur-2xl opacity-60"
+                />
+                {/* foreground: รูปเต็ม ไม่ crop */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={image}
+                  alt={imageAlt}
+                  loading="lazy"
+                  decoding="async"
+                  className="relative aspect-[16/9] w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                />
+              </>
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={image}
+                alt={imageAlt}
+                loading="lazy"
+                decoding="async"
+                className={`aspect-[16/9] w-full object-cover${imageTop ? " object-top" : ""} transition-transform duration-700 ease-out group-hover:scale-[1.03]`}
+              />
+            )}
             {/* hover sheen */}
             <span
               aria-hidden="true"
