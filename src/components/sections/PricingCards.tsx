@@ -14,6 +14,8 @@ export interface PricingPackage {
   image?: string;
   /** true = crop รูปจากด้านบน (object-top) แทน center — ใช้กับรูปสี่เหลี่ยมที่หัวข้อ/หัวอยู่ด้านบน */
   imageTop?: boolean;
+  /** true = โชว์รูปเต็ม ไม่ crop (object-contain) ในกรอบ 16:9 เดิม + เติมขอบข้างด้วยรูปเดียวกันแบบเบลอ — ใช้กับ KV สี่เหลี่ยมจัตุรัส */
+  imageContain?: boolean;
   features: string[];
   /** บรรทัดประหยัด เช่น "ประหยัด ฿8,000 · 50% off" */
   savings?: string;
@@ -65,7 +67,30 @@ export default function PricingCards({ eyebrow, heading, highlight, subtitle, pa
                     {pkg.badge.label}
                   </span>
                 )}
-                {pkg.image && (
+                {pkg.image && pkg.imageContain && (
+                  <div className="relative aspect-video w-full overflow-hidden rounded-t-card">
+                    {/* backdrop: รูปเดียวกันแบบเบลอ เติมช่องว่างด้านข้าง */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={pkg.image}
+                      alt=""
+                      aria-hidden="true"
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 h-full w-full scale-110 object-cover blur-2xl opacity-60"
+                    />
+                    {/* foreground: รูปเต็ม ไม่ crop */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={pkg.image}
+                      alt={pkg.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="relative h-full w-full object-contain"
+                    />
+                  </div>
+                )}
+                {pkg.image && !pkg.imageContain && (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
                     src={pkg.image}

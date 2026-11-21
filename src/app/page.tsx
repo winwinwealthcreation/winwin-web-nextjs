@@ -75,7 +75,7 @@ export default function HomePage() {
           title: "WIN Year-End Reunion",
           subtitle: "อัปเดตภาษี เตรียมบัญชีเพื่อปิดงบ วางแผนเงินปีหน้า",
           image: "/images/year-end-reunion.webp",
-          imageTop: true,
+          imageContain: true,
           href: "/year-end-reunion",
         },
       ],
@@ -243,7 +243,7 @@ export default function HomePage() {
       title: "WIN Year-End Reunion",
       description: "ปิดปีให้พร้อม เริ่มปีใหม่ให้เห็นทางโต",
       image: "/images/year-end-reunion.webp",
-      imageTop: true,
+      imageContain: true,
       features: [
         "เช็กลิสต์บัญชีและภาษีสำหรับคุยกับสำนักงานบัญชี",
         "สรุปจุดตรวจเรื่องกำไร เงินสด และภาระธุรกิจ",
@@ -320,7 +320,7 @@ export default function HomePage() {
           subtitle="WIN Year-End Reunion · ปิดปีให้พร้อม เริ่มปีใหม่ให้เห็นทางโต"
           image="/images/year-end-reunion.webp"
           imageAlt="WIN YEAR-END REUNION — สัมมนา 1 วัน เฉพาะนักเรียนเก่า วันเสาร์ที่ 12 ธันวาคม 2569"
-          imageTop
+          imageContain
           dateLabel="วันเสาร์ที่ 12 ธันวาคม 2569"
           dayLabel="12"
           monthLabel="ธ.ค."

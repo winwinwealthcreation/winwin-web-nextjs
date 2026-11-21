@@ -30,6 +30,8 @@ export interface JourneyStep {
     image?: string;
     /** true = crop รูปจากด้านบน (object-top) แทน center — ใช้กับรูปสี่เหลี่ยมที่หัวข้อ/หัวอยู่ด้านบน */
     imageTop?: boolean;
+    /** true = โชว์รูปเต็ม ไม่ crop (object-contain) ในกรอบ 16:9 เดิม + เติมขอบข้างด้วยรูปเดียวกันแบบเบลอ — ใช้กับ KV สี่เหลี่ยมจัตุรัส */
+    imageContain?: boolean;
     /** ถ้าไม่ใส่ = การ์ดโชว์เฉย ๆ (ไม่มีปุ่ม/ไม่เป็นลิงก์) สำหรับคอร์สที่ยังไม่มี sale page */
     href?: string;
     ctaText?: string;
@@ -68,7 +70,29 @@ function renderSubCard(sc: JourneySubCard, si: number) {
   const inner = (
     <>
       <div className="relative aspect-video w-full bg-bg-subtle">
-        {sc.image ? (
+        {sc.image && sc.imageContain ? (
+          <div className="absolute inset-0 overflow-hidden">
+            {/* backdrop: รูปเดียวกันแบบเบลอ เติมช่องว่างด้านข้าง */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={sc.image}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 h-full w-full scale-110 object-cover blur-2xl opacity-60"
+            />
+            {/* foreground: รูปเต็ม ไม่ crop */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={sc.image}
+              alt={sc.title}
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-contain"
+            />
+          </div>
+        ) : sc.image ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={sc.image}
